@@ -1,0 +1,81 @@
+<h1>Register</h1>
+ <div class="photo">
+  <div *ngIf="!selectedFile">
+    <img src="assets/plcImg.jpg" alt="Placeholder" class="placeholder-image" width="310" height="325">
+  </div>
+      <label for="photoInput"></label>
+      <input type="file" id="photoInput" name="photo" accept="image/*" (change)="onFileSelected($event)">
+  <p class="upload-text">Upload your Photo</p>
+  <div *ngIf="selectedFile">
+    <img [src]="imageUrl" alt="Selected Photo" width="310" height="325">
+  </div>
+  
+      
+      
+
+    <br><br>
+  
+
+    <form class="form" [formGroup]="registrationForm" (ngSubmit)="registerUser()" >
+
+      
+      <label for="firstName"></label>
+      <input type="text" id="firstName"  name="firstName" placeholder="First Name" formControlName="firstName" required>&nbsp;&nbsp;&nbsp;
+      
+
+      <label for="lastName"></label>
+      <input type="text" id="lastName" name="lastName" placeholder="Last Name" formControlName="lastName" required><br><br>
+
+      <label for="email"></label>
+      <input type="email" id="email" name="email" placeholder="Email" formControlName="email" required><br><br>
+
+      <label for="contactNumber"></label>
+      <input type="text" id="contactNumber" name="contactNumber"  placeholder="(541) 754-3010" formControlName="contactNumber" required><br><br>
+
+        <label for="ageRange">Age</label>
+        <input type="range" id="ageRange" name="ageRange" min="20" max="60" (input)="onAgeChange($event)" formControlName="ageRange" >{{ selectedAge }}
+        <br><br>
+
+      <label for="state"></label>
+      <select id="state" name="state" formControlName="state" >
+        <option disabled selected value="">State</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Karnataka">Karnataka</option>
+      </select><br><br>
+
+      <label for="country"></label>
+      <select id="country" name="country" formControlName="country">
+      <option disabled selected value="">Country</option>
+        <option value="India">India</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Australia">Australia</option>
+      
+      </select><br><br>
+
+     
+      <label for="address"></label>
+      <textarea id="address" name="address" rows="1" placeholder="Address" formControlName="address" required></textarea><br><br>
+
+      <label for="tags"></label>
+      <input type="text" id="tags" name="tags" placeholder="tags" formControlName="tags"><br><br>
+
+      
+      <input class="chk" type="checkbox" id="subscribe" name="subscribe" formControlName="subscribe">
+        Subscribe to newsletter
+        <br><br><br>
+        
+
+      <button type="button">Cancel</button>&nbsp;&nbsp;
+      <input type="submit" value="Submit">
+    </form>
+  </div><br><br>
+
+
+  
+
+ 
+

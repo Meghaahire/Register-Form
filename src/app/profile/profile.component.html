@@ -1,0 +1,44 @@
+
+   <div>
+    <h2>Profile</h2>
+    
+    <div class="photo" *ngIf="!editingProfile">
+       <img [src]="userData?.profilePictureUrl || 'assets/plcImg.jpg'" alt="Profile Picture" class="placeholder-image" width="310" height="325"><br> 
+      
+    </div>
+     
+
+     
+    <div >
+        
+      <p >
+        I'm {{ userData.get('firstName').value | json }} {{ userData.get('lastName').value | json }} and I'm above {{ userData.get('ageRange').value | json }} years. You can 
+        send your emails to  {{ userData.get('email').value | json }}. I live in the state of  {{ userData.get('state').value | json }}. 
+        I like to  reading Books. And please send me the newsletter. 
+        Please reach out to me on my Phone Number  {{ userData.get('contactNumber').value | json }}.
+        
+      </p> 
+      <button (click)="editProfile()">Edit Profile</button>
+    
+   
+    </div>
+   
+      
+      <!-- <button (click)="editPhoto()">Edit Photo</button>&nbsp;&nbsp;&nbsp; -->
+      
+
+    
+        
+  
+
+  
+  
+
+ 
+   
+  
+ 
+  
+      
+  
+  

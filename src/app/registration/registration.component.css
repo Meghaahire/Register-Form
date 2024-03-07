@@ -1,0 +1,86 @@
+
+.photo-container {
+  position: relative;
+}
+
+.upload-text {
+  margin-top: 10px;
+}
+
+.placeholder-image {
+  border: 2px dashed #ccc;
+  width: 150px; 
+  height: 150px; 
+  object-fit: cover; 
+  margin-right: 50px;
+  margin-bottom: 10px;
+}
+
+
+
+.container {
+  display: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: left;
+  margin: 5px;
+  margin-top:2px ;
+}
+
+h1 {
+  background-color: lightblue;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* .photo {
+  margin-right: 800px;
+  margin-bottom: 10px;
+  
+} */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 400px;
+  width: 50%;
+}
+
+.form label {
+  margin-bottom: 5px;
+}
+
+.form input,
+.form select,
+.form textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+  width: calc(80% - 6px);
+  box-sizing: border-box;
+}
+
+
+
+button {
+  padding: 10px 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #007BFF; 
+  color: #fff; 
+  border: none;
+  border-radius: 5px;
+  
+}
+
+
+div:last-child {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+div > div {
+  margin-bottom: 5px;
+}

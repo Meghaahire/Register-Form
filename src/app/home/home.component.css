@@ -1,0 +1,119 @@
+
+
+.form{
+    text-align: center;
+    border: 2px solid darkblue ; 
+    margin: 15px 60px 15px 60px;
+  margin-top: 50px;
+}
+  
+  .home {
+    text-align: center;
+    margin: 5px 70px 5px 70px;
+   
+  padding: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    width: 500px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  select {
+    padding: 8px;
+    width: 200px;
+  }
+  
+  p {
+    font-style: italic;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px ;
+    cursor: pointer;
+  }
+   
+  .checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px; 
+  }
+.desc {
+    text-align: center;
+    margin: 10px 70px 10px 70px;
+    background-color: lightgray;
+    padding: 10px ,20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+    color: black;
+  }
+  
+  .description {
+    font-size: 18px;
+    color: black;
+  }
+  
+  
+  .btn {
+    
+ background-color: white;
+  color: blue;
+  border: 1px solid blue; 
+  padding: 10px 20px;
+  
+  transition: background-color 0.3s
+  }
+  
+
+  .sb{
+    font-size: 16px;
+    color: black;
+  }
+
+  .eml{
+    background-color: white;
+  color: blue;
+  border: 1px solid blue; 
+  padding: 10px 20px;
+  
+  transition: background-color 0.3s
+  }
+  .sbb{
+    text-align: center;
+    margin: 5px 70px 5px 70px;
+  padding: 100px;
+
+  }
+  
+footer{
+  text-align: left;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
