@@ -7,12 +7,13 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.css'
+  styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
 
  userData: any={};
   editingProfile: boolean | undefined;
+  updateUserData:any;
   
   
   constructor(private userService: UserService) { }
@@ -21,28 +22,20 @@ export class ProfileComponent implements OnInit {
     this.userData = this.userService.getUserData();
    // alert(JSON.stringify(this.userData.value))
     };
-    
-
-  // editPhoto(): void {
-  //   const fileInput = document.getElementById('photoInput');
-  //   fileInput?.click();
-   
-  // }
-
+  
   editProfile(): void {
-    
-    this.editingProfile = true;
+    this.editingProfile = !this.editingProfile;
   }
 
-  saveEditedProfile(): void {
-    
-    this.userService.setUserData(this.userData);
+  saveProfile(): void {
+    this.userService.updateUserData(this.userData);
     this.editingProfile = false;
-
   }
 
   cancelEdit(): void {
-    
     this.editingProfile = false;
   }
+
+  
 }
+

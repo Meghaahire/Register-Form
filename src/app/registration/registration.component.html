@@ -8,20 +8,13 @@
   <p class="upload-text">Upload your Photo</p>
   <div *ngIf="selectedFile">
     <img [src]="imageUrl" alt="Selected Photo" width="310" height="325">
-  </div>
-  
-      
-      
+  </div> <br><br>
 
-    <br><br>
-  
 
     <form class="form" [formGroup]="registrationForm" (ngSubmit)="registerUser()" >
-
-      
       <label for="firstName"></label>
       <input type="text" id="firstName"  name="firstName" placeholder="First Name" formControlName="firstName" required>&nbsp;&nbsp;&nbsp;
-      
+      <!-- <span *ngIf="firstName.errors ?.required">user name can't be empty</span> -->
 
       <label for="lastName"></label>
       <input type="text" id="lastName" name="lastName" placeholder="Last Name" formControlName="lastName" required><br><br>
@@ -32,9 +25,8 @@
       <label for="contactNumber"></label>
       <input type="text" id="contactNumber" name="contactNumber"  placeholder="(541) 754-3010" formControlName="contactNumber" required><br><br>
 
-        <label for="ageRange">Age</label>
-        <input type="range" id="ageRange" name="ageRange" min="20" max="60" (input)="onAgeChange($event)" formControlName="ageRange" >{{ selectedAge }}
-        <br><br>
+      <label for="ageRange">Age</label>
+      <input type="range" id="ageRange" name="ageRange" min="20" max="60" (input)="onAgeChange($event)" formControlName="ageRange" >{{ selectedAge }}<br><br>
 
       <label for="state"></label>
       <select id="state" name="state" formControlName="state" >
@@ -53,24 +45,47 @@
         <option value="Argentina">Argentina</option>
         <option value="Mexico">Mexico</option>
         <option value="Australia">Australia</option>
-      
       </select><br><br>
 
-     
-      <label for="address"></label>
-      <textarea id="address" name="address" rows="1" placeholder="Address" formControlName="address" required></textarea><br><br>
+      <label for="addressType"></label>
+      <select id="addressType" name="addressType" formControlName="addressType">
+      <option disabled selected value="">Select Address Type</option>
+        <option value="home">Home</option>
+        <option value="company">Company</option>
+      </select><br><br>
 
-      <label for="tags"></label>
-      <input type="text" id="tags" name="tags" placeholder="tags" formControlName="tags"><br><br>
+    <div *ngIf="registrationForm.get('addressType')?.value === 'home'">
+      <label for="homeAddress1">Home Address 1</label>
+      <input type="text" id="homeAddress1" name="homeAddress1" placeholder="Home Address 1" formControlName="homeAddress1" required><br><br>
 
-      
+      <label for="homeAddress2">Home Address 2</label>
+      <input type="text" id="homeAddress2" name="homeAddress2" placeholder="Home Address 2" formControlName="homeAddress2" required><br><br>
+    </div>
+
+    <div *ngIf="registrationForm.get('addressType')?.value === 'company'">
+      <label for="companyAddress1">Company Address 1</label>
+      <input type="text" id="companyAddress1" name="companyAddress1" placeholder="Company Address 1" formControlName="companyAddress1" required><br><br>
+
+      <label for="companyAddress2">Company Address 2</label>
+      <input type="text" id="companyAddress2" name="companyAddress2" placeholder="Company Address 2" formControlName="companyAddress2" required><br><br>
+    </div>
+
+       <label for="tags"></label>
+         <input type="text" id="tags" name="tags" placeholder="tags" formControlName="tags" [(ngModel)]="selectedTag" (keydown.enter)="addTag()">
+         <div class="tags-container">
+          <span *ngFor="let tag of tags" class="tag" (click)="selectTag(tag)">{{ tag }}
+          <span class="tag-close" (click)="removeTag(tag)">x</span>
+          </span><br><br>
+    </div> 
+    
       <input class="chk" type="checkbox" id="subscribe" name="subscribe" formControlName="subscribe">
-        Subscribe to newsletter
-        <br><br><br>
-        
-
-      <button type="button">Cancel</button>&nbsp;&nbsp;
-      <input type="submit" value="Submit">
+        Subscribe to newsletter<br><br><br>
+      
+      <button class="button" type="button">Cancel</button>&nbsp;&nbsp;
+       <input class="button" type="submit" value="Submit"> 
+      <!-- <input class="button" type="submit" value="Submit" [disabled]="!registrationForm.valid"> -->
+      
+      
     </form>
   </div><br><br>
 

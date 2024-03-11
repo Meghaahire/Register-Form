@@ -6,6 +6,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
+  updateUserData(userData: any) {
+    throw new Error('Method not implemented.');
+  }
   saveUser(userData: any) {
     throw new Error('Method not implemented.');
   }
@@ -26,7 +29,7 @@ export class UserService {
     return this.userData;
   }
 
-  
+
 
   
   

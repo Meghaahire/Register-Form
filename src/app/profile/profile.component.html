@@ -1,14 +1,9 @@
 
    <div>
     <h2>Profile</h2>
-    
     <div class="photo" *ngIf="!editingProfile">
        <img [src]="userData?.profilePictureUrl || 'assets/plcImg.jpg'" alt="Profile Picture" class="placeholder-image" width="310" height="325"><br> 
-      
     </div>
-     
-
-     
     <div >
         
       <p >
@@ -16,16 +11,34 @@
         send your emails to  {{ userData.get('email').value | json }}. I live in the state of  {{ userData.get('state').value | json }}. 
         I like to  reading Books. And please send me the newsletter. 
         Please reach out to me on my Phone Number  {{ userData.get('contactNumber').value | json }}.
-        
+ 
       </p> 
       <button (click)="editProfile()">Edit Profile</button>
-    
-   
     </div>
-   
       
-      <!-- <button (click)="editPhoto()">Edit Photo</button>&nbsp;&nbsp;&nbsp; -->
-      
+      <div *ngIf="editingProfile">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" [(ngModel)]="userData.firstName"><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" [(ngModel)]="userData.lastName"><br>
+
+        <label for="ageRange">Age Range:</label>
+        <input type="text" id="ageRange" [(ngModel)]="userData.ageRange"><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" [(ngModel)]="userData.email"><br>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" [(ngModel)]="userData.state"><br>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="text" id="contactNumber" [(ngModel)]="userData.contactNumber"><br>
+
+       <br>
+        <button (click)="saveProfile()">Save</button>
+    </div>
+    
 
     
         

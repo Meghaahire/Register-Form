@@ -8,7 +8,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 
@@ -26,7 +26,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     ReactiveFormsModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
 
   ],
   providers: [],
